@@ -1,0 +1,30 @@
+/* ======================== LESSONS PAGE ======================== */
+.lessons__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.lessons__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.lessons__progress {
+  margin-bottom: 2.5rem;
+}
+
+.lessons__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .lessons__grid {
+    grid-template-columns: 1fr;
+  }
+}

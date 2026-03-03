@@ -1,0 +1,72 @@
+/* ======================== LESSONS PAGE ======================== */
+.lessons__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.lessons__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.lessons__progress {
+  margin-bottom: 2.5rem;
+}
+
+.lessons__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .lessons__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Firestore loading state */
+.lessons__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 0;
+  color: var(--text-secondary);
+}
+
+.lessons__spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Firestore error state */
+.lessons__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 80, 80, 0.07);
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.lessons__error-icon {
+  font-size: 2.5rem;
+}
+
+.lessons__error p {
+  color: #ff8080;
+  max-width: 480px;
+  line-height: 1.6;
+}

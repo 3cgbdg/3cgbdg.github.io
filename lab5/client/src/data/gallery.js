@@ -1,0 +1,88 @@
+const galleryData = [
+    {
+        id: 1,
+        title: "Golden Hour Portrait",
+        category: "portrait",
+        gradient: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+        icon: "🌅",
+    },
+    {
+        id: 2,
+        title: "Mountain Serenity",
+        category: "landscape",
+        gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
+        icon: "⛰️",
+    },
+    {
+        id: 3,
+        title: "Dewdrop Close-up",
+        category: "macro",
+        gradient: "linear-gradient(135deg, #a1ffce 0%, #faffd1 100%)",
+        icon: "💧",
+    },
+    {
+        id: 4,
+        title: "City Lights Blur",
+        category: "street",
+        gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
+        icon: "🌃",
+    },
+    {
+        id: 5,
+        title: "Studio Elegance",
+        category: "portrait",
+        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+        icon: "✨",
+    },
+    {
+        id: 6,
+        title: "Ocean Horizon",
+        category: "landscape",
+        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+        icon: "🌊",
+    },
+    {
+        id: 7,
+        title: "Petal Macro",
+        category: "macro",
+        gradient: "linear-gradient(135deg, #f77062 0%, #fe5196 100%)",
+        icon: "🌸",
+    },
+    {
+        id: 8,
+        title: "Rainy Evening",
+        category: "street",
+        gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+        icon: "🌧️",
+    },
+    {
+        id: 9,
+        title: "Environmental Portrait",
+        category: "portrait",
+        gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+        icon: "🧑‍🎨",
+    },
+    {
+        id: 10,
+        title: "Desert Dunes",
+        category: "landscape",
+        gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+        icon: "🏜️",
+    },
+    {
+        id: 11,
+        title: "Leaf Veins",
+        category: "macro",
+        gradient: "linear-gradient(135deg, #96fbc4 0%, #f9f586 100%)",
+        icon: "🍃",
+    },
+    {
+        id: 12,
+        title: "Subway Rush",
+        category: "street",
+        gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
+        icon: "🚇",
+    },
+];
+
+export default galleryData;

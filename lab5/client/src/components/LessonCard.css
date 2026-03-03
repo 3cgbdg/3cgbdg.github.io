@@ -1,0 +1,128 @@
+/* ======================== LESSON CARD ======================== */
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Subtle shimmer on hover */
+.lesson-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 60%,
+    rgba(108, 99, 255, 0.04) 100%
+  );
+  pointer-events: none;
+  transition: opacity var(--transition);
+  opacity: 0;
+}
+.lesson-card:hover::after {
+  opacity: 1;
+}
+
+/* Done state */
+.lesson-card--done {
+  border-color: rgba(0, 212, 170, 0.4) !important;
+  background: rgba(0, 212, 170, 0.05) !important;
+}
+
+/* Thumb */
+.lesson-card__thumb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: rgba(108, 99, 255, 0.15);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-card__emoji {
+  font-size: 2rem;
+}
+
+.lesson-card__done-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  background: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Meta row */
+.lesson-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lesson-card__category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  background: var(--primary-glow);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+.lesson-card__duration {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Text */
+.lesson-card__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color var(--transition);
+}
+.lesson-card:hover .lesson-card__title {
+  color: #fff;
+}
+
+.lesson-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* Button */
+.lesson-card__btn {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  padding: 0.55rem 1.2rem;
+}
+
+.lesson-card__btn--done {
+  background: rgba(0, 212, 170, 0.15);
+  color: var(--secondary);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  cursor: pointer;
+}
+.lesson-card__btn--done:hover {
+  background: rgba(0, 212, 170, 0.25);
+  transform: translateY(-1px);
+}

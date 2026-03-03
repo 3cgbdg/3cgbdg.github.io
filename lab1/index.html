@@ -39,7 +39,7 @@
       <section id="lessons">
         <h2 class="section-title">Майстер-класи та Уроки</h2>
         <div class="lessons-grid">
-          <article class="lesson-card">
+          <a href="module-detail.html?id=1" class="lesson-card">
             <div class="lesson-thumb-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800"
@@ -53,17 +53,11 @@
               <p>
                 Глибоке занурення в трикутник експозиції. Як керувати світлом, щоб створювати настрій та глибину в кожному кадрі.
               </p>
-              <div class="video-container">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/YNl2xQvE35k"
-                  title="Урок 1: Основи фотографії природи"
-                  allowfullscreen
-                ></iframe>
-              </div>
+              <span class="learn-more">Вивчати модуль →</span>
             </div>
-          </article>
+          </a>
 
-          <article class="lesson-card">
+          <a href="module-detail.html?id=2" class="lesson-card">
             <div class="lesson-thumb-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1761839258239-2be2146f1605?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -77,17 +71,11 @@
               <p>
                 Вивчаємо золотий переріз, провідні лінії та баланс. Навчіться будувати кадри, які захоплюють увагу з першого погляду.
               </p>
-              <div class="video-container">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/M-fK2QfJ6NU"
-                  title="Урок 2: Посібник для початківців"
-                  allowfullscreen
-                ></iframe>
-              </div>
+              <span class="learn-more">Вивчати модуль →</span>
             </div>
-          </article>
+          </a>
 
-          <article class="lesson-card">
+          <a href="module-detail.html?id=3" class="lesson-card">
             <div class="lesson-thumb-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800"
@@ -101,17 +89,11 @@
               <p>
                 Більше ніж просто обличчя. Вчимося працювати з моделлю, м'яким освітленням та передавати справжні емоції.
               </p>
-              <div class="video-container">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/I_J-pQ-eA68"
-                  title="Урок 3: Дика природа"
-                  allowfullscreen
-                ></iframe>
-              </div>
+              <span class="learn-more">Вивчати модуль →</span>
             </div>
-          </article>
+          </a>
 
-          <article class="lesson-card">
+          <a href="module-detail.html?id=4" class="lesson-card">
             <div class="lesson-thumb-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800"
@@ -125,15 +107,9 @@
               <p>
                 Від сірого RAW до кінематографічного шедевра. Кольорокорекція, локальні корекції та професійна ретуш.
               </p>
-              <div class="video-container">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/Hx0eY-lG1S8"
-                  title="Урок 4: Воркшоп з фотографії"
-                  allowfullscreen
-                ></iframe>
-              </div>
+              <span class="learn-more">Вивчати модуль →</span>
             </div>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -144,40 +120,49 @@
             <h2 class="section-title" style="text-align: left; margin-bottom: 1rem">Виставка робіт</h2>
             <p style="color: var(--text-muted); font-size: 1.1rem">Натхнення від наших талановитих студентів по всьому світу.</p>
           </div>
-          <button class="btn">Поділитися фото</button>
+          <div class="gallery-controls">
+            <div class="gallery-filters" id="gallery-filters">
+              <button class="filter-btn active" data-filter="all">Всі</button>
+              <button class="filter-btn" data-filter="landscape">Пейзажі</button>
+              <button class="filter-btn" data-filter="portrait">Портрети</button>
+              <button class="filter-btn" data-filter="macro">Макро</button>
+              <button class="filter-btn" data-filter="street">Вулиці</button>
+            </div>
+            <button id="upload-photo-btn" class="btn" style="padding: 0.8rem 1.5rem">Завантажити фотографію</button>
+          </div>
         </div>
-        <div class="gallery-grid">
-          <figure class="gallery-item">
+        <div class="gallery-grid" id="gallery-grid">
+          <figure class="gallery-item" data-type="landscape">
             <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" alt="Пейзаж" />
             <div class="gallery-overlay">
               <figcaption>Тиша Альпійських гір • Олексій В.</figcaption>
             </div>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item" data-type="landscape">
             <img src="https://images.unsplash.com/photo-1511300636408-a63a89df3482?auto=format&fit=crop&q=80&w=800" alt="Озеро" />
             <div class="gallery-overlay">
               <figcaption>Задзеркалля • Ірина С.</figcaption>
             </div>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item" data-type="landscape">
             <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&q=80&w=800" alt="Природа" />
             <div class="gallery-overlay">
               <figcaption>Золота година в лісі • Дмитро К.</figcaption>
             </div>
           </figure>
-          <figure class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800" alt="Мандрівка" />
+          <figure class="gallery-item" data-type="portrait">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Портрет" />
             <div class="gallery-overlay">
-              <figcaption>Шлях до невідомого • Анна М.</figcaption>
+              <figcaption>Погляд крізь час • Анна М.</figcaption>
             </div>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item" data-type="street">
             <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800" alt="Місто" />
             <div class="gallery-overlay">
               <figcaption>Вогні нічного мегаполісу • Сергій П.</figcaption>
             </div>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item" data-type="macro">
             <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=800" alt="Макро" />
             <div class="gallery-overlay">
               <figcaption>Текстура життя • Марія Л.</figcaption>
@@ -244,6 +229,113 @@
           </div>
         </div>
       </section>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <!-- ЗАВДАННЯ 1: DOM + Цикли + Умовна логіка            -->
+      <!-- ═══════════════════════════════════════════════════ -->
+      <section id="task1">
+        <h2 class="section-title">Поради для фотографа</h2>
+        <p style="text-align:center; color:var(--text-muted); margin-bottom:3rem;">
+          Елементи нижче стилізовані через JavaScript: цикл <code>for</code>, <code>if-else</code> та <code>querySelectorAll</code>.
+        </p>
+        <ul id="tips-list" class="tips-list">
+          <li data-category="exposure"><span class="tip-text">Використовуйте ручний режим для повного контролю</span></li>
+          <li data-category="composition"><span class="tip-text">Застосовуйте правило третин у кожному кадрі</span></li>
+          <li data-category="portrait"><span class="tip-text">Фокусуйтеся на очах при портретній зйомці</span></li>
+          <li data-category="editing"><span class="tip-text">Завжди знімайте в RAW для гнучкої обробки</span></li>
+          <li data-category="exposure"><span class="tip-text">Не бійтеся підвищувати ISO при слабкому освітленні</span></li>
+          <li data-category="composition"><span class="tip-text">Шукайте провідні лінії в архітектурі та природі</span></li>
+          <li data-category="portrait"><span class="tip-text">Використовуйте природне світло від вікна для м'яких портретів</span></li>
+          <li data-category="editing"><span class="tip-text">Не перенасичуйте кольори при обробці</span></li>
+        </ul>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <!-- ЗАВДАННЯ 2: Обробка подій та динамічні оновлення    -->
+      <!-- ═══════════════════════════════════════════════════ -->
+      <section id="task2">
+        <h2 class="section-title">Інтерактивні елементи</h2>
+
+        <!-- Toggle секція -->
+        <div class="interactive-block">
+          <h3>Перемикання видимості</h3>
+          <button id="toggle-btn" class="btn toggle-btn">▼ Показати додаткову інформацію</button>
+          <div id="extra-content" class="extra-content">
+            <p>Фотографія — це мистецтво захоплення моментів, які неможливо повторити. Кожен кадр є унікальним відбитком часу.</p>
+            <p>Від перших дагеротипів до сучасних цифрових камер, фотографія пройшла величезний шлях еволюції, але суть залишилась незмінною — передати емоцію через образ.</p>
+          </div>
+        </div>
+
+        <!-- Навігаційні кнопки -->
+        <div class="interactive-block">
+          <h3>Навчальний контент</h3>
+          <div class="content-nav">
+            <button class="content-nav-btn active">Витримка</button>
+            <button class="content-nav-btn">Діафрагма</button>
+            <button class="content-nav-btn">ISO</button>
+            <button class="content-nav-btn">Баланс білого</button>
+          </div>
+          <div id="content-area" class="content-area">
+            <h4>Витримка</h4>
+            <p>Витримка контролює тривалість відкриття затвора. Коротка витримка (1/1000) заморожує рух, а довга (1/30) створює ефект розмиття. Для зйомки спорту обирають 1/500 або швидше.</p>
+          </div>
+        </div>
+
+        <!-- Hover ефекти -->
+        <div class="interactive-block">
+          <h3>Жанри фотографії <span style="color:var(--text-muted); font-size:0.9rem; font-weight:400;">(наведіть курсор)</span></h3>
+          <div class="hover-menu">
+            <div class="hover-menu-item" data-type="landscape">
+              <h4>🏔️ Пейзаж</h4>
+              <p class="hover-desc">Зйомка природи, гір та відкритих просторів</p>
+            </div>
+            <div class="hover-menu-item" data-type="macro">
+              <h4>🔍 Макро</h4>
+              <p class="hover-desc">Деталі невидимого світу крупним планом</p>
+            </div>
+            <div class="hover-menu-item" data-type="street">
+              <h4>🌆 Вулична</h4>
+              <p class="hover-desc">Репортажна зйомка міського життя</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <!-- ЗАВДАННЯ 3: Динамічне керування контентом           -->
+      <!-- ═══════════════════════════════════════════════════ -->
+      <section id="task3">
+        <h2 class="section-title">Спільнота фотографів</h2>
+
+        <!-- Форма коментарів -->
+        <div class="interactive-block">
+          <h3>Залишити коментар</h3>
+          <form id="comment-form" class="comment-form">
+            <div class="form-row">
+              <input type="text" id="input-name" class="form-input" placeholder="Ваше ім'я" />
+              <input type="email" id="input-email" class="form-input" placeholder="Електронна пошта" />
+            </div>
+            <textarea id="input-comment" class="form-input form-textarea" placeholder="Ваш коментар..." rows="4"></textarea>
+            <div id="form-error" class="form-error" style="display:none;"></div>
+            <button type="submit" class="btn">Надіслати коментар</button>
+          </form>
+          <div id="comments-display" class="comments-display"></div>
+        </div>
+
+        <!-- Блог -->
+        <div class="interactive-block">
+          <h3>Блог: Статті для фотографів</h3>
+          <div id="blog-list" class="blog-list">
+            <!-- Пости додаються динамічно через JS -->
+          </div>
+        </div>
+
+        <!-- Зміна кольору фону -->
+        <div class="interactive-block" style="text-align:center;">
+          <h3>Змініть тему сторінки</h3>
+          <button id="color-btn" class="btn">🎨 Змінити тему оформлення</button>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -271,5 +363,26 @@
         <p>&copy; 2024 PhotoPro Academy. Навчальна платформа. Всі права захищені.</p>
       </div>
     </footer>
+
+    <!-- Photo Upload Modal -->
+    <div id="upload-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Завантажити нову фотографію</h3>
+        <form id="upload-form" class="comment-form">
+          <input type="text" id="photo-url" class="form-input" placeholder="URL зображення (напр. Unsplash)" required />
+          <input type="text" id="photo-caption" class="form-input" placeholder="Назва фото та автор" required />
+          <select id="photo-type" class="form-input">
+            <option value="landscape">Пейзаж</option>
+            <option value="portrait">Портрет</option>
+            <option value="macro">Макро</option>
+            <option value="street">Вулиця</option>
+          </select>
+          <button type="submit" class="btn">Додати до галереї</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../lab2/script.js"></script>
   </body>
 </html>

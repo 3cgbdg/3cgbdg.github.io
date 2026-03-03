@@ -1,0 +1,68 @@
+const lessonsData = [
+    {
+        id: 1,
+        title: "Introduction to Photography",
+        description: "Learn the basics of photography — what a camera is, how it works, and the key concepts every beginner needs to know.",
+        category: "Basics",
+        duration: "25 min",
+        emoji: "📷",
+    },
+    {
+        id: 2,
+        title: "Understanding Light",
+        description: "Discover how light shapes your photos. Explore natural light, artificial light, and the golden hour.",
+        category: "Technique",
+        duration: "30 min",
+        emoji: "💡",
+    },
+    {
+        id: 3,
+        title: "Composition Rules",
+        description: "Master the rule of thirds, leading lines, framing, and other composition techniques to create stunning images.",
+        category: "Technique",
+        duration: "35 min",
+        emoji: "📐",
+    },
+    {
+        id: 4,
+        title: "Portrait Photography",
+        description: "Capture emotion and personality. Learn lighting setups, posing guidance, and lens choices for portrait work.",
+        category: "Genre",
+        duration: "40 min",
+        emoji: "🤳",
+    },
+    {
+        id: 5,
+        title: "Landscape Photography",
+        description: "Explore wide-angle techniques, tripod use, long exposures, and how to capture dramatic natural scenes.",
+        category: "Genre",
+        duration: "40 min",
+        emoji: "🌄",
+    },
+    {
+        id: 6,
+        title: "Macro Photography",
+        description: "Get up close and personal with the world. Learn about macro lenses, depth of field, and focus stacking.",
+        category: "Genre",
+        duration: "35 min",
+        emoji: "🔬",
+    },
+    {
+        id: 7,
+        title: "Street Photography",
+        description: "Capture candid moments in public spaces. Explore ethics, timing, and gear for street shooting.",
+        category: "Genre",
+        duration: "30 min",
+        emoji: "🏙️",
+    },
+    {
+        id: 8,
+        title: "Post-Processing Basics",
+        description: "Learn how to edit your photos using Lightroom and Photoshop — from basic adjustments to creative effects.",
+        category: "Editing",
+        duration: "45 min",
+        emoji: "🎨",
+    },
+];
+
+export default lessonsData;

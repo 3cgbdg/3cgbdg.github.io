@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі Модуля | PhotoPro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .module-detail-hero {
+            padding-top: calc(var(--nav-height) + 60px);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at 50% -10%, rgba(255, 77, 109, 0.08) 0%, transparent 50%);
+        }
+
+        .video-hero-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            margin: 3rem auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            border: 1px solid var(--glass-border);
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-hero-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .module-info-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .module-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .meta-item b {
+            color: var(--accent);
+        }
+
+        .module-description {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .learning-outcomes {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            margin-top: 4rem;
+        }
+
+        .learning-outcomes h3 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .outcome-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .outcome-icon {
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .back-nav {
+            position: absolute;
+            top: 120px;
+            left: 4%;
+            z-index: 10;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .video-hero-wrapper {
+                border-radius: 12px;
+                margin: 2rem 0;
+            }
+            .module-meta {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            .learning-outcomes {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PHOTO<span>PRO</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#lessons">Уроки</a></li>
+                <li><a href="index.html#gallery">Галерея</a></li>
+                <li><a href="index.html#progress">Мій прогрес</a></li>
+            </ul>
+            <a href="index.html#lessons" class="btn" style="padding: 0.8rem 2rem; font-size: 0.95rem">Всі уроки</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-nav">
+            <a href="index.html#lessons" class="back-btn">
+                <span>← Повернутися до курсів</span>
+            </a>
+        </div>
+
+        <section class="module-detail-hero">
+            <span class="lesson-tag" id="moduleTag">Завантаження...</span>
+            <h1 class="section-title" id="moduleTitle" style="margin-bottom: 1rem;">Назва Модуля</h1>
+            
+            <div class="video-hero-wrapper">
+                <iframe id="moduleVideo" src="" title="Video Player" allowfullscreen></iframe>
+            </div>
+
+            <div class="module-info-container">
+                <div class="module-meta">
+                    <div class="meta-item">Тривалість: <b id="moduleDuration">--</b></div>
+                    <div class="meta-item">Складність: <b id="moduleDifficulty">--</b></div>
+                    <div class="meta-item">Уроків: <b id="moduleCount">--</b></div>
+                </div>
+
+                <p class="module-description" id="moduleDesc">
+                    Тут буде детальний опис модуля та того, що ви вивчите.
+                </p>
+
+                <div class="learning-outcomes">
+                    <h3>Чого ви навчитеся:</h3>
+                    <ul class="outcomes-list" id="outcomesList">
+                        <!-- Items will be loaded by JS -->
+                    </ul>
+                </div>
+
+                <div style="margin-top: 4rem; text-align: center;">
+                    <a href="index.html#progress" class="btn">Відмітити як завершений</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const moduleData = {
+            '1': {
+                tag: 'Модуль 1',
+                title: 'Мистецтво Світла: Експозиція',
+                video: 'https://www.youtube-nocookie.com/embed/YNl2xQvE35k',
+                duration: '45 хв',
+                difficulty: 'Початковий',
+                lessons: '6 уроків',
+                desc: 'Глибоке занурення в трикутник експозиції. Як керувати світлом, щоб створювати настрій та глибину в кожному кадрі. Ви дізнаєтесь, як витримка впливає на рух, як діафрагма створює розмиття фону та коли підвищувати ISO.',
+                outcomes: [
+                    'Розуміння витримки, діафрагми та ISO',
+                    'Робота в ручному режимі (M)',
+                    'Використання експокорекції',
+                    'Гістограма: як читати світло',
+                    'Творче використання пересвіту та тіней'
+                ]
+            },
+            '2': {
+                tag: 'Модуль 2',
+                title: 'Геометрія Кадру: Композиція',
+                video: 'https://www.youtube-nocookie.com/embed/M-fK2QfJ6NU',
+                duration: '60 хв',
+                difficulty: 'Початковий',
+                lessons: '8 уроків',
+                desc: 'Вивчаємо золотий переріз, провідні лінії та баланс. Навчіться будувати кадри, які захоплюють увагу з першого погляду. Композиція - це мова, якою говорить ваша фотографія.',
+                outcomes: [
+                    'Правило третин та золотий переріз',
+                    'Створення візуального шляху через лінії',
+                    'Симетрія та її порушення',
+                    'Фреймінг: кадрування всередині кадру',
+                    'Робота з перспективою та кутами зйомки'
+                ]
+            },
+            '3': {
+                tag: 'Модуль 3',
+                title: 'Психологія Портрета',
+                video: 'https://www.youtube-nocookie.com/embed/I_J-pQ-eA68',
+                duration: '55 хв',
+                difficulty: 'Середній',
+                lessons: '7 уроків',
+                desc: 'Більше ніж просто обличчя. Вчимося працювати з моделлю, м\'яким освітленням та передавати справжні емоції. Портрет - це діалог між фотографом та моделлю.',
+                outcomes: [
+                    'Позування та психологічний комфорт',
+                    'Схема освітлення Рембрандта',
+                    'Зйомка з природним світлом від вікна',
+                    'Фокус на очах та глибина різкості',
+                    'Вибір фокусної відстані для портрета'
+                ]
+            },
+            '4': {
+                tag: 'Модуль 4',
+                title: 'Цифрова Проявка в Lightroom',
+                video: 'https://www.youtube-nocookie.com/embed/Hx0eY-lG1S8',
+                duration: '90 хв',
+                difficulty: 'Складний',
+                lessons: '10 уроків',
+                desc: 'Від сірого RAW до кінематографічного шедевра. Кольорокорекція, локальні корекції та професійна ретуш. Ви навчитеся створювати свій власний стиль обробки.',
+                outcomes: [
+                    'Імпорт та організація каталогу',
+                    'Базовий розвиток RAW файлів',
+                    'Робота з кривими (Curves)',
+                    'Кольорокорекція та пресети',
+                    'Видалення дефектів та пластика'
+                ]
+            }
+        };
+
+        function loadModule() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id') || '1';
+            const data = moduleData[id];
+
+            if (data) {
+                document.title = `${data.title} | PhotoPro`;
+                document.getElementById('moduleTag').textContent = data.tag;
+                document.getElementById('moduleTitle').textContent = data.title;
+                document.getElementById('moduleVideo').src = data.video;
+                document.getElementById('moduleDuration').textContent = data.duration;
+                document.getElementById('moduleDifficulty').textContent = data.difficulty;
+                document.getElementById('moduleCount').textContent = data.lessons;
+                document.getElementById('moduleDesc').textContent = data.desc;
+
+                const list = document.getElementById('outcomesList');
+                list.innerHTML = '';
+                data.outcomes.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'outcome-item';
+                    li.innerHTML = `<span class="outcome-icon">✓</span> <span>${item}</span>`;
+                    list.appendChild(li);
+                });
+            }
+        }
+
+        window.onload = loadModule;
+    </script>
+</body>
+</html>
