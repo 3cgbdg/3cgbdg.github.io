@@ -126,3 +126,17 @@
   background: rgba(0, 212, 170, 0.25);
   transform: translateY(-1px);
 }
+
+@media (max-width: 480px) {
+  .lesson-card {
+    padding: 1.25rem;
+  }
+  .lesson-card__title {
+    font-size: 0.95rem;
+  }
+  .lesson-card__btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

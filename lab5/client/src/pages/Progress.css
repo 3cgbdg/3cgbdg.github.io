@@ -153,3 +153,33 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .progress-page__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .progress-page__stat {
+    padding: 1rem 0.5rem;
+  }
+  .progress-page__stat-num {
+    font-size: 1.6rem;
+  }
+  .progress-page__item {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+  }
+  .progress-page__item-badge {
+    margin-left: auto;
+  }
+  .progress-page__item-info {
+    min-width: 0;
+  }
+  .progress-page__item-title {
+    font-size: 0.88rem;
+  }
+  .progress-page__list h2 {
+    font-size: 1rem;
+  }
+}
