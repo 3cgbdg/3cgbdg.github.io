@@ -1,0 +1,8 @@
+/* =====================================================
+   Netlify SPA redirect rule
+   Without this, refreshing any non-root route (e.g. /progress)
+   returns a 404 because Netlify looks for a physical file.
+   This rule sends ALL requests to index.html so React Router
+   can handle them client-side.
+===================================================== */
+/*    /index.html   200

@@ -6,7 +6,8 @@
 - Firebase project from lab4 (same `.env` used)
 - `serviceAccountKey.json` downloaded from Firebase Console → Project Settings → Service Accounts → Generate new private key
 - Git repository (your `3cgbdg.github.io` repo)
-- Account on [Render.com](https://render.com) (free tier)
+- Account on [Render.com](https://render.com) (free tier) — for the server
+- Account on [Netlify.com](https://netlify.com) (free tier) — for the client
 
 ---
 
@@ -81,10 +82,10 @@ git push
 
 In the Render dashboard for your service, go to **Environment** and add:
 
-| Key           | Value                      |
-| ------------- | -------------------------- |
-| `PORT`        | `5000`                     |
-| `CORS_ORIGIN` | `https://3cgbdg.github.io` |
+| Key           | Value                                                   |
+| ------------- | ------------------------------------------------------- |
+| `PORT`        | `5000`                                                  |
+| `CORS_ORIGIN` | `https://YOUR-SITE.netlify.app` _(update after step 6)_ |
 
 ### Step 4 — Add Service Account Key as Secret File on Render
 
@@ -114,49 +115,76 @@ https://lab5-server.onrender.com/api/message
 
 ---
 
-## 5. Update Client for Production
+## 5. Deploy Client on Netlify
 
-In `lab5/client/.env`, update the API URL to your deployed Render URL:
+> [!IMPORTANT]
+> `.env` files are NOT pushed to GitHub. Netlify solves this by letting you set `REACT_APP_*` vars in its dashboard — it bakes them into the build automatically.
 
-```env
-REACT_APP_API_URL=https://lab5-server.onrender.com
+### Step 1 — Push the client folder to GitHub
+
+```powershell
+git add lab5/
+git commit -m "feat: lab5 client with Netlify deploy"
+git push
 ```
 
-Also update `lab5/server/.env`:
+### Step 2 — Create site on Netlify
 
-```env
-CORS_ORIGIN=https://3cgbdg.github.io
+1. Go to [app.netlify.com](https://app.netlify.com) → **"Add new site"** → **"Import an existing project"**
+2. Connect GitHub → select your `3cgbdg.github.io` repo
+3. Configure build settings:
+
+| Setting               | Value               |
+| --------------------- | ------------------- |
+| **Base directory**    | `lab5/client`       |
+| **Build command**     | `npm run build`     |
+| **Publish directory** | `lab5/client/build` |
+
+4. Click **"Deploy site"**
+
+### Step 3 — Set Environment Variable in Netlify
+
+1. Go to your site → **Site configuration** → **Environment variables**
+2. Click **"Add a variable"**:
+
+| Key                 | Value                              |
+| ------------------- | ---------------------------------- |
+| `REACT_APP_API_URL` | `https://lab5-server.onrender.com` |
+
+3. Click **"Save"** then **"Trigger deploy"** → **"Clear cache and deploy site"**
+
+> Netlify bakes `REACT_APP_API_URL` into the bundle at build time — no need to push `.env`.
+
+### Step 4 — Note your Netlify URL
+
+Your site will be live at something like:
+
+```
+https://your-site-name.netlify.app
 ```
 
 ---
 
-## 6. Deploy Client on GitHub Pages
+## 6. Update CORS on Render
 
-The site is already hosted on `3cgbdg.github.io`. The client can be deployed as a subfolder build:
+Now that you know your Netlify URL, update the `CORS_ORIGIN` env var in the Render dashboard:
 
-```powershell
-cd lab5\client
-npm install
-npm run build
-```
+1. Render → your `lab5-server` service → **Environment**
+2. Update `CORS_ORIGIN` from the placeholder to your real Netlify URL:
 
-Copy the contents of `lab5/client/build/` to a `lab5/` folder in the root of your repo, or configure GitHub Pages to serve from the `lab5/client/build` folder.
+| Key           | Value                                |
+| ------------- | ------------------------------------ |
+| `CORS_ORIGIN` | `https://your-site-name.netlify.app` |
 
-> **Simpler alternative**: Since we have the Express server, the built React app can also be served by the server itself. Copy `build/` contents into `lab5/server/public/` and the server's catch-all route will serve `index.html`.
-
-```powershell
-# After npm run build in lab5/client:
-robocopy lab5\client\build lab5\server\public /E
-```
-
-Then your Render deployment will serve both the API and the React app from the same URL.
+3. Render will automatically redeploy.
 
 ---
 
 ## 7. Verify End-to-End
 
-1. Open `https://lab5-server.onrender.com` (or `https://3cgbdg.github.io/lab5/...`)
+1. Open your Netlify URL: `https://your-site-name.netlify.app`
 2. Register or log in
 3. Go to **Lessons** → mark a lesson as completed
 4. Go to **My Progress** → lesson shows ✓ Done with the completion date
-5. Refresh → progress persists (loaded from server API)
+5. Refresh the page → progress persists (loaded from Render server API)
+6. Test a direct URL like `https://your-site-name.netlify.app/progress` → should NOT 404 (thanks to `_redirects`)
